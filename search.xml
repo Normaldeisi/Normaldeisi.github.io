@@ -14,7 +14,32 @@
   <entry>
     <title>博客文章发布教程</title>
     <url>/2023/02/01/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><span id="more"></span>
+
+<ol>
+<li>打开markdown文本编辑工具</li>
+<li>将下列内容置于文章题头</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标题</span><br><span class="line">data: 2023-02-01</span><br><span class="line">tags: </span><br><span class="line">- 标签</span><br><span class="line">categories: 分类</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>​	<u>上述内容中每个符号均为英文符号，注意空格，内容粘贴为纯文本，日期注意更改</u></p>
+<ol start="3">
+<li><p>更改为源代码模式时应当只有上下两行为</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="添加阅读全文按钮"><a href="#添加阅读全文按钮" class="headerlink" title="添加阅读全文按钮"></a>添加阅读全文按钮</h1><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p><u>注意粘贴为纯文本</u></p>
+<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><ol>
+<li><p>将文章复制到如下路径</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">S:\hexo\source\_posts</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在hexo根目录下右键点击git bash here，依次输入如下两行代码</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>​		</p>
+]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -25,7 +50,7 @@
   <entry>
     <title>markdown语法教程</title>
     <url>/2023/02/01/markdown%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="markdown的使用说明"><a href="#markdown的使用说明" class="headerlink" title="markdown的使用说明"></a>markdown的使用说明</h1><span id="more"></span>    
+    <content><![CDATA[<h1 id="markdown的使用说明"><a href="#markdown的使用说明" class="headerlink" title="markdown的使用说明"></a>markdown的使用说明</h1><span id="more"></span>
 
 <h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><blockquote>
 <p>语法：# (一级标题)  ## (二级标题)  ### (三级标题) ……</p>
