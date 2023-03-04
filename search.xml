@@ -1111,7 +1111,7 @@
       </tags>
   </entry>
   <entry>
-    <title>数据库原理学习笔记（1）</title>
+    <title>数据库原理学习笔记</title>
     <url>/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
     <content><![CDATA[<h1 id="数据库系统的基本原理"><a href="#数据库系统的基本原理" class="headerlink" title="数据库系统的基本原理"></a>数据库系统的基本原理</h1><span id="more"></span>
 
@@ -1192,6 +1192,24 @@
       </categories>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统学习笔记</title>
+    <url>/2023/03/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="操作系统概论"><a href="#操作系统概论" class="headerlink" title="操作系统概论"></a>操作系统概论</h1><span id="more"></span>
+
+<h3 id="多道批处理系统"><a href="#多道批处理系统" class="headerlink" title="多道批处理系统"></a>多道批处理系统</h3><p>宏观上多个作业并行，微观上多个作业串行，各道程序轮流占用CPU交替执行</p>
+<p><strong>多道程序设计是现代操作系统概念中的基本概念</strong></p>
+<h3 id="操作系统的目标"><a href="#操作系统的目标" class="headerlink" title="操作系统的目标"></a>操作系统的目标</h3><p><strong>方便</strong><br>为用户提供一个环境，让用户可以轻松的工作<br>操作系统让计算机更易于使用</p>
+<p><strong>有效</strong><br>操作系统以一种有效的方式管理所有的资源，而用户不直接与资源交互(提高系统资源的利用率)<br>用户同时做多个工作，而不担心硬件资源，不会降低效率(提高系统吞吐量)</p>
+<p><strong>进化能力（可扩充性、开放性）</strong><br>操作系统的构建方式应该允许在不干扰服务的情况下有效地开发、测试和引入新的系统功能(遵循世界标准规范)</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
       </tags>
   </entry>
 </search>
