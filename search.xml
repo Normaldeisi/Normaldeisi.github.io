@@ -1100,17 +1100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++学习笔记（1）</title>
-    <url>/2023/02/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="程序的内存模型"><a href="#程序的内存模型" class="headerlink" title="程序的内存模型"></a>程序的内存模型</h1><span id="more"></span>]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据库原理学习笔记</title>
     <url>/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
     <content><![CDATA[<h1 id="数据库系统的基本原理"><a href="#数据库系统的基本原理" class="headerlink" title="数据库系统的基本原理"></a>数据库系统的基本原理</h1><span id="more"></span>
@@ -1210,6 +1199,29 @@
       </categories>
       <tags>
         <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++学习笔记（1）</title>
+    <url>/2023/02/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="程序的内存模型"><a href="#程序的内存模型" class="headerlink" title="程序的内存模型"></a>程序的内存模型</h1><span id="more"></span>
+
+<h2 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h2><p>C++在执行时，将内存大方向划为4个区域，不同区域存放的数据，赋予不同的生命周期</p>
+<p><strong>代码区</strong><br>存放函数体的二进制代码，由操作系统进行管理</p>
+<p><strong>全局区</strong><br>存放全局变量和静态变量以及常量</p>
+<p><strong>栈区</strong><br>由编译器自动分配和释放，存放函数的参数值，局部变量等</p>
+<p><strong>堆区</strong><br>由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
+<h3 id="程序运行前"><a href="#程序运行前" class="headerlink" title="程序运行前"></a>程序运行前</h3><p>在程序编译后，生成了exe可执行程序，<strong>未执行该程序前</strong>分为两个区域</p>
+<p><strong>代码区：</strong></p>
+<p>存放CPU执行的机器指令<br>代码区是<strong>共享</strong>的，共享的目的是对于频繁执行的程序，只需要在内存中有一份代码即可<br>代码区是<strong>只读</strong>的，使其只读的原因是防止程序意外地修改了它的指令</p>
+<p><strong>全局区：</strong></p>
+<p>全局变量和静态变量存放在此<br>全局区还包含了常量区，字符串常量和其他常量也存放在此<br><strong>该区域的数据在程序结束后由操作系统释放</strong></p>
+<h3 id="程序运行后"><a href="#程序运行后" class="headerlink" title="程序运行后"></a>程序运行后</h3><h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h3>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
 </search>
