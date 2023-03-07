@@ -1202,21 +1202,44 @@
       </tags>
   </entry>
   <entry>
-    <title>C++学习笔记（1）</title>
+    <title>C++学习笔记（1）-程序的内存模型</title>
     <url>/2023/02/28/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="程序的内存模型"><a href="#程序的内存模型" class="headerlink" title="程序的内存模型"></a>程序的内存模型</h1><span id="more"></span>
+    <content><![CDATA[<h1 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h1><span id="more"></span>
 
-<h2 id="内存分区模型"><a href="#内存分区模型" class="headerlink" title="内存分区模型"></a>内存分区模型</h2><p>C++在执行时，将内存大方向划为4个区域，不同区域存放的数据，赋予不同的生命周期</p>
+<p>C++在执行时，将内存大方向划为4个区域，不同区域存放的数据，赋予不同的生命周期</p>
 <p><strong>代码区</strong><br>存放函数体的二进制代码，由操作系统进行管理</p>
 <p><strong>全局区</strong><br>存放全局变量和静态变量以及常量</p>
 <p><strong>栈区</strong><br>由编译器自动分配和释放，存放函数的参数值，局部变量等</p>
 <p><strong>堆区</strong><br>由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
-<h3 id="程序运行前"><a href="#程序运行前" class="headerlink" title="程序运行前"></a>程序运行前</h3><p>在程序编译后，生成了exe可执行程序，<strong>未执行该程序前</strong>分为两个区域</p>
+<h2 id="程序运行前"><a href="#程序运行前" class="headerlink" title="程序运行前"></a>程序运行前</h2><p>在程序编译后，生成了exe可执行程序，<strong>未执行该程序前</strong>分为两个区域</p>
 <p><strong>代码区：</strong></p>
 <p>存放CPU执行的机器指令<br>代码区是<strong>共享</strong>的，共享的目的是对于频繁执行的程序，只需要在内存中有一份代码即可<br>代码区是<strong>只读</strong>的，使其只读的原因是防止程序意外地修改了它的指令</p>
 <p><strong>全局区：</strong></p>
 <p>全局变量和静态变量存放在此<br>全局区还包含了常量区，字符串常量和其他常量也存放在此<br><strong>该区域的数据在程序结束后由操作系统释放</strong></p>
-<h3 id="程序运行后"><a href="#程序运行后" class="headerlink" title="程序运行后"></a>程序运行后</h3><h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h3>]]></content>
+<h2 id="程序运行后"><a href="#程序运行后" class="headerlink" title="程序运行后"></a>程序运行后</h2><p><strong>栈区：</strong></p>
+<p>由编译器自动分配释放，存放函数的参数值，局部变量等</p>
+<p>注意事项：不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</p>
+<p><strong>堆区：</strong></p>
+<p>由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
+<p>在C++中主要利用new在堆区开辟内存</p>
+<h2 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h2><p> C++利用new操作符在堆区开辟数据，用delete释放数据</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span>* <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span>* a = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = <span class="built_in">func</span>();</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; *p &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//利用delete释放堆区数据</span></span><br><span class="line">    <span class="keyword">delete</span> p;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//堆区开辟数组</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> *arr = <span class="type">int</span>[<span class="number">10</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span> ; i++)&#123;</span><br><span class="line">        arr[i] = i + <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">delete</span> []arr;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
