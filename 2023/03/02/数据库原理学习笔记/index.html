@@ -23,17 +23,17 @@
   <meta name="description" content="数据库系统的基本原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库原理学习笔记">
-<meta property="og:url" content="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:url" content="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="老舍">
 <meta property="og:description" content="数据库系统的基本原理">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-02T10:47:06.626Z">
-<meta property="article:modified_time" content="2023-03-04T09:49:51.093Z">
+<meta property="article:modified_time" content="2023-03-09T07:42:57.946Z">
 <meta property="article:author" content="慵猫自重">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/">
+<link rel="canonical" href="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-04 17:49:51" itemprop="dateModified" datetime="2023-03-04T17:49:51+08:00">2023-03-04</time>
+                <time title="修改时间：2023-03-09 15:42:57" itemprop="dateModified" datetime="2023-03-09T15:42:57+08:00">2023-03-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,6 +314,89 @@
 <p>通过<strong>外模式&#x2F;模式映射</strong>实现的</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>四种模型</p>
 <p>三级模式和两级映射</p>
+<h1 id="关系数据库标准语言SQL"><a href="#关系数据库标准语言SQL" class="headerlink" title="关系数据库标准语言SQL"></a>关系数据库标准语言SQL</h1><h2 id="2-1-SQL语言介绍"><a href="#2-1-SQL语言介绍" class="headerlink" title="2.1 SQL语言介绍"></a>2.1 SQL语言介绍</h2><h3 id="SQL数据库的体系结构"><a href="#SQL数据库的体系结构" class="headerlink" title="SQL数据库的体系结构"></a>SQL数据库的体系结构</h3><p>使用SQL的关系数据库具有如下特点：</p>
+<p>一个视图是从若干基本表或其他视图上导出的表，视图是一个虚表<br>一个或一些基本表对应一个数据文件<br>一个基本表也可以存放在若干数据文件中<br>一个数据文件对应存储设备上的一个存储文件<br>一个基本表可以带若干索引，索引也存放在数据文件中<br>一个表空间可以由若干数据文件组成<br>一个数据库可以由多个存储文件组成</p>
+<h3 id="SQL的特点"><a href="#SQL的特点" class="headerlink" title="SQL的特点"></a>SQL的特点</h3><p>1.综合统一</p>
+<p>2.高度非过程化</p>
+<p>3.面向集合的操作方式</p>
+<p>4.同一种语法结构提供两种使用方式</p>
+<p>SQL语言既是独立式语言，又是嵌入式语言。</p>
+<p>5.语言简洁，易学易用</p>
+<h3 id="SQL语言的组成"><a href="#SQL语言的组成" class="headerlink" title="SQL语言的组成"></a>SQL语言的组成</h3><p>数据定义语言DDL</p>
+<p>数据操纵语言DML</p>
+<p>数据控制语言DCL</p>
+<h2 id="2-2-数据定义"><a href="#2-2-数据定义" class="headerlink" title="2.2 数据定义"></a>2.2 数据定义</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>1.字符串类型</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th>存储空间</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">char</td>
+<td>M字节</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td align="left">varchar</td>
+<td>L+1字节</td>
+<td>可变长字符串</td>
+</tr>
+<tr>
+<td align="left">enum(value,……)</td>
+<td>1或2字节</td>
+<td>枚举：可赋予某个枚举成员</td>
+</tr>
+<tr>
+<td align="left">set(value,……)</td>
+<td>1~8字节</td>
+<td>集合：可赋予多个集合成员</td>
+</tr>
+</tbody></table>
+<p>2.整型</p>
+<p>3.浮点型</p>
+<h3 id="基本表的定义"><a href="#基本表的定义" class="headerlink" title="基本表的定义"></a>基本表的定义</h3><p>关系<br>用于描述数据的一张二维表</p>
+<p><strong>域</strong><br>指列或属性的取值范围</p>
+<p><strong>候选键</strong><br>也叫候选码，能唯一的标识关系中每一个元组的最小属性集。一个关系可能有多个候选键</p>
+<p><strong>主键</strong><br>也叫主码，可以从关系的候选键中指定其中一个作为关系的主键，一个关系最多只能指定<strong>一个主键</strong>，<strong>作为主键的列不允许取NULL值</strong></p>
+<p>主属性<br>候选键中的所有属性均称为主属性</p>
+<p>非主属性<br>不包含在任何候选键中的属性称为非主属性</p>
+<p>全码<br>关系中所有属性的组合是该关系的一个候选码，则该候选码称为全码</p>
+<p><strong>外键</strong><br>关系R中的某个属性K是另一个关系S中的主键，则称该属性K是关系R的外键。通过外键可以建立两表间的联系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">外键</span><br><span class="line">关系“学生”中的一个属性“专业号”对应着另一关系“专业”的主键“专业号”，那么“专业号”在关系“学生”中称为外键</span><br><span class="line"></span><br><span class="line">//被参照表（父表或主表）</span><br><span class="line">专业（专业号，专业名）</span><br><span class="line"></span><br><span class="line">//参照表（子表或从表）</span><br><span class="line">学生（学号，姓名，性别，专业号，出生日期）</span><br></pre></td></tr></table></figure>
+
+<h3 id="关系的特征"><a href="#关系的特征" class="headerlink" title="关系的特征"></a>关系的特征</h3><p><strong>列是同质的</strong>，每一列中的分量是同一类型的数据，来自同一个域</p>
+<p>不同的列可出自同一个域</p>
+<p>各列的顺序在理论上是无序的，但使用时按习惯考虑列的顺序</p>
+<p>任意两个元组的候选码不能相同</p>
+<p>行的顺序无所谓</p>
+<p><strong>分量必须取原子值</strong>，每一个分量都必须是不可分的数据项</p>
+<h3 id="数据库的完整性"><a href="#数据库的完整性" class="headerlink" title="数据库的完整性"></a>数据库的完整性</h3><p>数据库的完整性是指数据的正确性和相容性</p>
+<p>为了维护数据库的完整性，DBMS必须能够：<br>1）提供定义完整性约束条件的机制<br>2）提供完整性检查的方法<br>3）<strong>违约处理</strong></p>
+<h3 id="三类完整性规则"><a href="#三类完整性规则" class="headerlink" title="三类完整性规则"></a>三类完整性规则</h3><p>1.实体完整性规则</p>
+<p>实体完整性给出了主键的取值的最低约束条件<br>1）主键的各个属性都<strong>不能为空值</strong><br>2）值唯一</p>
+<p>2.参照完整性</p>
+<p>定义<br>设F是关系R的一个或一组属性（但F不是R的主键），K是关系S的主键。如果F与K相对应，则称F是关系R的外键，并称关系R为参照关系，关系S为被参照关系。而<strong>关系R和关系S可以是同一个关系</strong></p>
+<p>规则<br>外键或者取<strong>空值</strong>（要求外键的每个属性均为空值），或者<strong>等于被参照关系中的主键的某个值</strong></p>
+<p>3.用户定义的完整性</p>
+<p>属性的取值应当满足用户定义的约束条件</p>
+<h3 id="数据库的定义和删除"><a href="#数据库的定义和删除" class="headerlink" title="数据库的定义和删除"></a>数据库的定义和删除</h3><p>1.创建数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE 数据库名</span><br></pre></td></tr></table></figure>
+
+<p>2.选择数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USE 数据库名</span><br></pre></td></tr></table></figure>
+
+<p>3.删除数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE 数据库名</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本表的定义、删除和修改"><a href="#基本表的定义、删除和修改" class="headerlink" title="基本表的定义、删除和修改"></a>基本表的定义、删除和修改</h3><p>1.创建表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">CREATE TABLE 表名</span><br><span class="line">(</span><br><span class="line">&lt;列名&gt;&lt;数据类型&gt;[DEFAULT&lt;默认值&gt;]</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">);</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">CREATE TABLE product</span><br><span class="line">(</span><br><span class="line">p_code  DECIMAL(6),</span><br><span class="line">P_name  VARCHAR(30),</span><br><span class="line">p_price DECIMAL(5,2)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">//可以使用DESC命令显示表的结构</span><br><span class="line">DESC product;</span><br></pre></td></tr></table></figure>
+
+<p>2.利用子查询来创建表</p>
+<p>3.修改表的结构</p>
+<p>详见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42392049/article/details/113274046">https://blog.csdn.net/qq_42392049/article/details/113274046</a></p>
 <p>​		</p>
 
     </div>
@@ -398,7 +481,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">数据库系统的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1 数据库系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">数据库系统的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="nav-text">数据管理技术的发展阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">1.2 数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E8%B1%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-text">数据抽象的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="nav-text">关系模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">1.3 数据库体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="nav-text">数据库系统的三级结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F"><span class="nav-text">数据库的三级模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BA%8C%E7%BA%A7%E6%98%A0%E5%B0%84%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">数据库系统的二级映射与数据独立性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">数据库系统的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1 数据库系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">数据库系统的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E7%9A%84%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="nav-text">数据管理技术的发展阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-text">1.2 数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%BD%E8%B1%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-text">数据抽象的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="nav-text">关系模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">1.3 数据库体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="nav-text">数据库系统的三级结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F"><span class="nav-text">数据库的三级模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BA%8C%E7%BA%A7%E6%98%A0%E5%B0%84%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-text">数据库系统的二级映射与数据独立性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A0%87%E5%87%86%E8%AF%AD%E8%A8%80SQL"><span class="nav-text">关系数据库标准语言SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-SQL%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.1 SQL语言介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">SQL数据库的体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">SQL的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL%E8%AF%AD%E8%A8%80%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-text">SQL语言的组成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="nav-text">2.2 数据定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">基本表的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">关系的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-text">数据库的完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%B1%BB%E5%AE%8C%E6%95%B4%E6%80%A7%E8%A7%84%E5%88%99"><span class="nav-text">三类完整性规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%A0%E9%99%A4"><span class="nav-text">数据库的定义和删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E3%80%81%E5%88%A0%E9%99%A4%E5%92%8C%E4%BF%AE%E6%94%B9"><span class="nav-text">基本表的定义、删除和修改</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
