@@ -1236,8 +1236,6 @@
 <p>2)逻辑独立性</p>
 <p>指用户的应用程序与逻辑结构是相互独立的</p>
 <p>通过<strong>外模式&#x2F;模式映射</strong>实现的</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>四种模型</p>
-<p>三级模式和两级映射</p>
 <h1 id="关系数据库标准语言SQL"><a href="#关系数据库标准语言SQL" class="headerlink" title="关系数据库标准语言SQL"></a>关系数据库标准语言SQL</h1><h2 id="2-1-SQL语言介绍"><a href="#2-1-SQL语言介绍" class="headerlink" title="2.1 SQL语言介绍"></a>2.1 SQL语言介绍</h2><h3 id="SQL数据库的体系结构"><a href="#SQL数据库的体系结构" class="headerlink" title="SQL数据库的体系结构"></a>SQL数据库的体系结构</h3><p>使用SQL的关系数据库具有如下特点：</p>
 <p>一个视图是从若干基本表或其他视图上导出的表，视图是一个虚表<br>一个或一些基本表对应一个数据文件<br>一个基本表也可以存放在若干数据文件中<br>一个数据文件对应存储设备上的一个存储文件<br>一个基本表可以带若干索引，索引也存放在数据文件中<br>一个表空间可以由若干数据文件组成<br>一个数据库可以由多个存储文件组成</p>
 <h3 id="SQL的特点"><a href="#SQL的特点" class="headerlink" title="SQL的特点"></a>SQL的特点</h3><p>1.综合统一</p>
